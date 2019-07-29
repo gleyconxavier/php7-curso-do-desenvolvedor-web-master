@@ -1,13 +1,11 @@
 <?php
-session_save_path('/tmp');
+// session_save_path('/tmp'); // linux workaround
 session_start();
+if(isset($_POST['email']) && isset($_POST['senha'])){
 
-$email = $_POST['email'];
-$senha = $_POST['senha'];
-echo("Valores: " . $email .  $senha);
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-
-if(isset($_POST['email'])) {
     $usuarios = [
         [
             "nome" => "Aluno Cod3r",
@@ -16,24 +14,26 @@ if(isset($_POST['email'])) {
         ],
         [
             "nome" => "Outro Aluno",
-            "email" => "outro@email.com.br",
+            "email" => "outro@email.com",
             "senha" => "654321",
         ],
     ];
 
     foreach($usuarios as $usuario) {
+
         $emailValido = $email === $usuario['email'];
         $senhaValida = $senha === $usuario['senha'];
-        echo("Validação concluída<br>" . $emailValido . $senhaValida);
+
         if($emailValido && $senhaValida) {
             $_SESSION['erros'] = null;
             $_SESSION['usuario'] = $usuario['nome'];
             $exp = time() + 60 * 60 * 24 * 30;
-            setcookie(['usuario'] = $usuario['nome'], $exp);
+            setcookie('usuario', $usuario['nome'], $exp);
             header('Location: index.php');
         }
     }
-    if(!$_SESSION['usuario']) {
+
+    if(empty($_SESSION['usuario'])) {
         $_SESSION['erros'] = ['Usuário/Senha inválida!'];
     }
 }
@@ -46,7 +46,7 @@ if(isset($_POST['email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/estilo.css">
     <link rel="stylesheet" href="assets/css/login.css">
     <title>Curso PHP</title>
@@ -59,7 +59,7 @@ if(isset($_POST['email'])) {
     <main class="principal">
         <div class="conteudo">
             <h3>Identifique-se</h3>
-            <?php if ($_SESSION['erros']): ?>
+            <?php if (isset($_SESSION['erros'])): ?>
                 <div class="erros">
                     <?php foreach ($_SESSION['erros'] as $erro): ?>
                         <p><?= $erro ?></p>

@@ -1,9 +1,9 @@
 <?php
-session_save_path('/tmp');
+// session_save_path('/tmp'); // linux workaround
 session_start();
 
 if($_COOKIE['usuario']) {
-    $_SESSION['usuario'] = $_COOKIE['usuario'];
+    $_SESSION['nome'] = $_COOKIE['usuario'];
 }
 
 if(!$_SESSION['usuario']) {
@@ -17,7 +17,7 @@ if(!$_SESSION['usuario']) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/estilo.css">
     <link rel="stylesheet" href="assets/css/exercicio.css">
     <title>Curso PHP</title>

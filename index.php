@@ -1,5 +1,5 @@
 <?php
-session_save_path('/tmp');
+// session_save_path('/tmp'); // linux workaround
 session_start();
 
 if($_COOKIE['usuario']) {
@@ -16,7 +16,7 @@ if(!$_SESSION['usuario']) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/estilo.css">
     <title>Curso PHP</title>
 </head>
@@ -60,10 +60,10 @@ if(!$_SESSION['usuario']) {
                                 Desafio
                             </a>
                         </li>
-                        
-                        
+
+
                     </ul>
-                    
+
                 </div>
                 <div class="modulo vermelho">
                     <h3>2. Tipos</h3>
@@ -73,7 +73,7 @@ if(!$_SESSION['usuario']) {
                         Tipo Inteiro
                     </a>
                     </li>
-                    
+
                     <li>
                     <a href="exercicio.php?dir=tipos&file=float">
                         Tipo Float
@@ -111,7 +111,7 @@ if(!$_SESSION['usuario']) {
                                 Conversões
                             </a>
                         </li>
-                        
+
 
                 </div>
 
@@ -443,7 +443,7 @@ if(!$_SESSION['usuario']) {
                         </li>
                     </ul>
                     </div>
-                    
+
                     <div class="modulo roxo-escuro">
                     <h3>9. Includes</h3>
                     <ul>
@@ -517,10 +517,11 @@ if(!$_SESSION['usuario']) {
                                 Erro Handler
                             </a>
                         </li>
-                        
-                        
+
+
                     </ul>
                     </div>
+
                     <div class="modulo vermelho">
                     <h3>12. Sessão</h3>
                     <ul>
@@ -541,16 +542,78 @@ if(!$_SESSION['usuario']) {
                     <ul>
                         <li>
                             <a href="exercicio.php?dir=api&file=datas_01">
-                                Datas 01
+                                Datas #01
                             </a>
                         </li>
                         <li>
-                            <a href="exercicio.php?dir=sessao&file=gerenciando_sessao">
-                                Gerenciando Sessão
+                            <a href="exercicio.php?dir=api&file=datas_02">
+                                Datas #02
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=api&file=escrever_arquivo">
+                                Escrever Arquivo
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=api&file=download">
+                                Download
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=api&file=imagens">
+                                Imagens
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=api&file=ler_arquivo">
+                                Ler Arquivo
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=api&file=upload">
+                                Upload
                             </a>
                         </li>
                     </ul>
                     </div>
+
+                    <div class="modulo roxo">
+                    <h3>14. Formulários</h3>
+                    <ul>
+                        <li>
+                            <a href="exercicio.php?dir=formulario&file=formulario">
+                                  Formulário
+                            </a>
+                        </li>
+                      </ul>
+                      </div>
+                      <div class="modulo laranja">
+                      <h3>15. BD</h3>
+                      <ul>
+                          <li>
+                              <a href="exercicio.php?dir=db&file=criar_banco">
+                                    Criar Banco
+                              </a>
+                          </li>
+                          <li>
+                              <a href="exercicio.php?dir=db&file=criar_tabela">
+                                    Criar Tabela
+                              </a>
+                          </li>
+                          <li>
+                              <a href="exercicio.php?dir=db&file=inserir_1">
+                                    Inserir Registro #01
+                              </a>
+                          </li>
+                          <li>
+                              <a href="exercicio.php?dir=db&file=consultar">
+                                    Consultar Registros
+                              </a>
+                          </li>
+                        </ul>
+                        </div>
+
             </nav>
         </div>
     </main>

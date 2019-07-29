@@ -1,5 +1,5 @@
 <?php
-session_save_path('/tmp');
+// session_save_path('/tmp'); // linux workaround
 session_start();
 session_destroy();
 unset($_COOKIE['usuario']);

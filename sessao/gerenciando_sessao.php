@@ -1,7 +1,7 @@
 <div class="titulo">Gerenciando Sessão</div>
 
 <?php
-session_save_path('/tmp');
+// session_save_path('/tmp'); linux workaround
 session_start();
 // fb07a036258d1f2ea6a4ae693227ec87
 echo session_id();
